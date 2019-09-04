@@ -1,0 +1,14 @@
+windows:
+  - name: Beehive Batches
+    layout: even-vertical
+    profile: Standalone
+    panes:
+      - cd ~/src/dlm/beehive/workers/v2/batches/billing_statements && PRY=1 bundle exec runner run
+      - cd ~/src/dlm/beehive/workers/v2/batches/sba_microloans && PRY=1 bundle exec runner run
+      - cd ~/src/dlm/beehive/workers/v2/batches/credit_bureau && PRY=1 bundle exec runner run
+      - cd ~/src/dlm/beehive/workers/v2/batches/late_charges && PRY=1 bundle exec runner run
+      - cd ~/src/dlm/beehive/workers/v2/batches/payments && PRY=1 bundle exec runner run
+      - cd ~/src/dlm/beehive/workers/v2/batches/quickbooks && PRY=1 bundle exec runner run
+      - cd ~/src/dlm/beehive/workers/v2/batches/community_advantage  && PRY=1 bundle exec runner run
+      - cd ~/src/dlm/beehive/workers/v2/batches/adjustable_interest  && PRY=1 bundle exec runner run
+      - cd ~/src/dlm/beehive/workers/v2/batches/cdfi  && PRY=1 bundle exec runner run

@@ -1,0 +1,7 @@
+windows:
+  - name: Beehive Billing Statements
+    layout: even-vertical
+    profile: Standalone
+    panes:
+      - cd ~/src/dlm/beehive/workers/v2/batches/billing_statements && PRY=1 bundle exec runner run
+      - cd ~/src/dlm/beehive/workers/v2/aws/s3 && PRY=1 bundle exec runner run

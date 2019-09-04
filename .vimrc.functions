@@ -1,0 +1,79 @@
+"*****************************************************************
+" Copied from ruler.vim 
+"* Ruler commands
+"*****************************************************************
+:command! -nargs=0 Rule call Ruler("1","*",500)
+:command! -nargs=0 Ruldot call Ruler(".","1",500)
+:command! -nargs=? Ruler call Ruler(<f-args>)
+
+nmap <Leader>r :cal Ruler("","*",80)<CR>
+nmap <Leader>r. :cal Ruler(".","1",80)<CR>
+nmap <Leader>r1 :cal Ruler("1","*",80)<CR>
+nmap <Leader>r.* :cal Ruler(".","*",80)<CR>
+nmap <Leader>r1* :cal Ruler("1","*",80)<CR>
+nmap <Leader>r.1 :cal Ruler(".","1",80)<CR>
+
+function! s:LineLen()
+     let r = strlen( getline( "." ) )
+     if ( r == 0 )
+        let r = 80
+     endif
+
+     return r
+endfunction
+
+function! Ruler(...)
+   "echo a:0
+   if ( a:0 == 0 )
+      let RuleOne = "1"
+      let RuleTen = "*"
+      let RuleLen = s:LineLen()
+   elseif ( a:0 == 1 )
+      let RuleOne = ( a:1 == "" ? "." : a:1 )
+      let RuleTen = "*"
+      let RuleLen = s:LineLen()
+   elseif ( a:0 == 2 )
+      let RuleOne = ( a:1 == "" ? "." : a:1 )
+      let RuleTen = ( a:2 == "" ? "*" : a:2 )
+      let RuleLen = s:LineLen()
+   elseif ( a:0 > 2 )
+      let RuleOne = ( a:1 == "" ? "." : a:1 )
+      let RuleTen = ( a:2 == "" ? "*" : a:2 )
+      let RuleLen = a:3
+   endif
+   let n = 1
+   let disptext = ""
+   while ( n <= RuleLen )
+     let char = ( n % 10 == 0 ? ( RuleTen == "1" ? n : RuleTen ) : ( RuleOne == "1" ? n % 10 : RuleOne ) )
+     let disptext = disptext . char
+     let n = n + strlen( char )
+     "echo disptext
+   endwhile
+
+  put! =disptext
+  "echo disptext
+endfunction
+
+
+"*****************************************************************
+" Srtip Trailing White Spaces
+"
+"*****************************************************************
+"
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()
+
+function! TrimWhiteSpace()
+    %s/\s\+$//e
+endfunction
+autocmd BufWritePre     *.rb,*.haml,*.js,*.erb,*.jsx :call TrimWhiteSpace()
+
+
+"*****************************************************************
+" vim-ruby: for blocks (if, case) line up to leftmost side
+"*****************************************************************
+:let g:ruby_indent_assignment_style = 'variable'

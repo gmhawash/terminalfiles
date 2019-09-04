@@ -1,0 +1,7 @@
+windows:
+  - name: Patron servers
+    layout: main-vertical-flipped
+    profile: Standalone
+    panes:
+      - cd ~/src/dlm/patron.client && bundle exec rails s -p 9500
+      - cd ~/src/dlm/patron.admin && bundle exec rails s -p 9501

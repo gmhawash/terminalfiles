@@ -1,0 +1,8 @@
+windows:
+  - name: Beehive Notifiers
+    layout: even-vertical
+    profile: Standalone
+    panes:
+      - cd ~/src/dlm/beehive/workers/v2/notifiers/sendgrid  && PRY=1 bundle exec runner run
+      - cd ~/src/dlm/beehive/workers/v2/notifiers/slack  && PRY=1 bundle exec runner run
+      - cd ~/src/dlm/beehive/workers/v2/notifiers/completion_notifier  && PRY=1 bundle exec runner run

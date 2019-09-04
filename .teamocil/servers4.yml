@@ -1,0 +1,6 @@
+windows:
+  - name: Loan Manager
+    layout: main-vertical-flipped
+    profile: Standalone
+    panes:
+      - cd ~/src/dlm/loan_manager && bundle exec rails s -p 9999

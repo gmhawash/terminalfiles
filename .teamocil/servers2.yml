@@ -1,0 +1,7 @@
+windows:
+  - name: Servers 2
+    layout: main-vertical-flipped
+    profile: Standalone
+    panes:
+      - cd ~/src/dlm/vortex && bundle exec rails s -p 6600
+      - cd ~/src/dlm/cockpit && bundle exec rails s -p 4500

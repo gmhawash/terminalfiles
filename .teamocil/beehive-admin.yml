@@ -1,0 +1,7 @@
+windows:
+  - name: Beehive Admin
+    layout: even-vertical
+    profile: Standalone
+    panes:
+      - cd ~/src/dlm/beehive/workers/v2/admin/tag_definitions  && PRY=1 bundle exec runner run
+      - cd ~/src/dlm/beehive/workers/v2/system_services  && PRY=1 bundle exec runner run

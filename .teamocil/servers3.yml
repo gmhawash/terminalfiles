@@ -1,0 +1,8 @@
+windows:
+  - name: Meedan Servers
+    layout: main-vertical-flipped
+    profile: Standalone
+    panes:
+      - cd ~/src/dlm/meedan.client && bundle exec rails s -p 9000
+      - cd ~/src/dlm/meedan.admin && bundle exec rails s -p 9001
+      - cd ~/src/dlm/meedan.api && bundle exec rails s -p 9002

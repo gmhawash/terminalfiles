@@ -1,0 +1,8 @@
+windows:
+  - name: Servers
+    layout: main-vertical-flipped
+    profile: Standalone
+    panes:
+      - cd ~/src/dlm/reports && bundle exec shotgun -p 4001
+      - cd ~/src/dlm/services && bundle exec rails s -p 4000
+      - cd ~/src/dlm/core && bundle exec rails s

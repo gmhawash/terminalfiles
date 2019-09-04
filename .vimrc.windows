@@ -1,0 +1,6 @@
+" map <Leader>(1..9) for switching between windows
+let i = 1
+while i <= 9
+    execute 'nnoremap <Leader>' . i . ' :' . i . 'wincmd w<CR>'
+    let i = i + 1
+endwhile

@@ -1,0 +1,16 @@
+windows:
+  - name: Beehive Reports
+    layout: even-vertical
+    profile: Standalone
+    panes:
+      - cd ~/src/dlm/beehive/workers/v2/reports/escrows  && PRY=1 bundle exec runner run
+      - cd ~/src/dlm/beehive/workers/v2/reports/application_pipelines  && PRY=1 bundle exec runner run
+      - cd ~/src/dlm/beehive/workers/v2/reports/batch_payments  && PRY=1 bundle exec runner run
+      - cd ~/src/dlm/beehive/workers/v2/reports/portfolio  && PRY=1 bundle exec runner run
+      - cd ~/src/dlm/beehive/workers/v2/reports/billing  && PRY=1 bundle exec runner run
+      - cd ~/src/dlm/beehive/workers/v2/reports/credit_bureau  && PRY=1 bundle exec runner run
+      - cd ~/src/dlm/beehive/workers/v2/reports/more_reports  && PRY=1 bundle exec runner run
+      - cd ~/src/dlm/beehive/workers/v2/reports/analytics  && PRY=1 bundle exec runner run
+      - cd ~/src/dlm/beehive/workers/v2/reports/loans  && PRY=1 bundle exec runner run
+      - cd ~/src/dlm/beehive/workers/v2/reports/participants  && PRY=1 bundle exec runner run
+      - cd ~/src/dlm/beehive/workers/v2/reports/quickbooks  && PRY=1 bundle exec runner run

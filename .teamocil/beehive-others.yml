@@ -1,0 +1,17 @@
+windows:
+  - name: Beehive Others
+    layout: even-vertical
+    profile: Standalone
+    panes:
+      - cd ~/src/dlm/beehive/workers/v2/references  && PRY=1 bundle exec runner run
+      - cd ~/src/dlm/beehive/workers/v2/resources/community_advantage  && PRY=1 bundle exec runner run
+      - cd ~/src/dlm/beehive/workers/v2/resources/income_limits  && PRY=1 bundle exec runner run
+      - cd ~/src/dlm/beehive/workers/v2/resources/participation_transactions  && PRY=1 bundle exec runner run
+      - cd ~/src/dlm/beehive/workers/v2/resources/participants  && PRY=1 bundle exec runner run
+      - cd ~/src/dlm/beehive/workers/v2/resources/tag_entries  && PRY=1 bundle exec runner run
+      - cd ~/src/dlm/beehive/workers/v2/resources/alerts  && PRY=1 bundle exec runner run
+      - cd ~/src/dlm/beehive/workers/v2/aws/s3  && PRY=1 bundle exec runner run
+      - cd ~/src/dlm/beehive/workers/v2/apis/incoming  && PRY=1 bundle exec runner run
+      - cd ~/src/dlm/beehive/workers/v2/apis/outgoing  && PRY=1 bundle exec runner run
+      - cd ~/src/dlm/beehive/workers/v2/calculators  && PRY=1 bundle exec runner run
+      - cd ~/src/dlm/beehive/workers/v2/patrons  && PRY=1 bundle exec runner run
